@@ -42,35 +42,6 @@ public class Usuario {
 			return false;
 		}
 
-//		if (DNI.length() < 9 || DNI.length() > 10) {
-//			return false;
-//		}
-//
-//		for (int i = 0; i < 8; i++) {
-//			char c = DNI.charAt(i);
-//
-//			if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
-//					&& c != '9') {
-//				return false;
-//			}
-//
-//		}
-//
-//		if (DNI.length() == 10) {
-//			char separador = DNI.charAt(8);
-//			if (separador != '-') {
-//				return false;
-//			}
-//		}
-//
-//		char ultimoCaracter = DNI.charAt(DNI.length() - 1);
-//		if (Character.isLetter(ultimoCaracter) == false) {
-//			return false;
-//		}
-//		if (ultimoCaracter == 'Ñ') {
-//			return false;
-//		}
-
 		this.DNI = DNI.toUpperCase();
 
 		return true;
