@@ -17,8 +17,8 @@ public abstract class Dinero {
 		return description;
 	}
 	
-	/*public void setDescription(String description) {
+	public void setDescription(String description) {
 		this.description = description;
-	}*/
+	}
 
 }
