@@ -8,7 +8,7 @@ public class Cuenta {
 	private List<Ingreso> ingresos;
 
 	public Cuenta(Usuario usuario) {
-
+        this.usuario = usuario;
 		this.saldo = 0;
 	}
 
@@ -37,9 +37,15 @@ public class Cuenta {
 	}
 
 	public double addIngresos(String description, double cantidad) {
+		this.saldo = this.saldo + cantidad;
 
-		this.saldo = saldo + cantidad;
-		return saldo;
+		return this.saldo;
+	}
+	
+	public double addGastos(String description, double cantidad) {
+		
+		this.saldo = this.saldo - cantidad;
+		return this.saldo;
 	}
 
 }
