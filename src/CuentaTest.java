@@ -34,7 +34,7 @@ public class CuentaTest {
 	}
 	
 	@Test
-	public void testSePuedeAñadirUnGastoCuandoHaySuficienteDinero() {
+	public void testSePuedeAñadirUnGastoCuandoHaySuficienteDinero() throws GastoException {
 		Usuario usuario1 = new Usuario();
 		Cuenta cuenta1 = new Cuenta(usuario1);
 		
@@ -47,6 +47,17 @@ public class CuentaTest {
 		Assert.assertEquals(495.92, nuevoSaldo, 0.001);
 		Assert.assertEquals(495.92, cuenta1.getSaldo(), 0.001);
 		
+	}
+	
+	
+	@Test(expected = GastoException.class)
+	public void testSeLanzaExcepcionCuandoGastoMayorQueIngreso() throws GastoException{
+		
+		Usuario usuario1 = new Usuario();
+		Cuenta cuenta1 = new Cuenta(usuario1);
+		
+		double nuevoSaldo = cuenta1.addIngresos("Nómina", 1000);
+		nuevoSaldo = cuenta1.addGastos("Derrama", 1200);
 	}
 
 

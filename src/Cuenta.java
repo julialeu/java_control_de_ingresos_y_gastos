@@ -42,7 +42,12 @@ public class Cuenta {
 		return this.saldo;
 	}
 	
-	public double addGastos(String description, double cantidad) {
+	public double addGastos(String description, double cantidad) throws GastoException {
+		
+	    if (this.saldo < cantidad) {
+	    	
+	    	throw new GastoException();
+	    }
 		
 		this.saldo = this.saldo - cantidad;
 		return this.saldo;
