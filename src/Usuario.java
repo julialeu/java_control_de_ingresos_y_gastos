@@ -30,11 +30,6 @@ public class Usuario {
 
 		String regex = "^[0-9]{8}-?[a-zA-Z]{1}";
 
-		/*
-		 * Pattern patron = Pattern.compile(regex); boolean esDniValido =
-		 * Pattern.matcher(DNI).matches();
-		 */
-
 		boolean isDniValid = DNI.matches(regex);
 
 		if (!isDniValid) {
