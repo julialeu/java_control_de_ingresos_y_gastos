@@ -28,13 +28,13 @@ public class Usuario {
 
 	public boolean setDNI(String DNI) {
 
-		String regex = "^[0-9]{8}-?[a-zA-Z]{1}";
+		String regex = "^[0-9]{8}-?[a-zA-Z]{1}$";
 
 		boolean isDniValid = DNI.matches(regex);
 
 		if (!isDniValid) {
 
-			return false;
+			//return false;
 		}
 
 		this.DNI = DNI.toUpperCase();

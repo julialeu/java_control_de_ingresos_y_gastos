@@ -47,11 +47,52 @@ public class Main {
 		
 		while (accion != 0) {
 			
+			System.out.println("Has elegido la acción " + accion);
+			
+			if (accion == 5) {
+				
+				double saldo = cuenta1.getSaldo();
+				
+				System.out.println("Tienes " + saldo + "€ de saldo en tu cuenta.");
+			} 
+			
+			if (accion == 2) {
+				
+				System.out.println("Introduce una cantidad a ingresar.");
+				
+				double ingreso = Double.parseDouble(entrada.nextLine());
+				
+				System.out.println("Introduce el concepto del ingreso.");
+				
+				String concepto = entrada.nextLine();
+				
+				double nuevoSaldo = cuenta1.addIngresos(concepto, ingreso);
+				
+				System.out.println("Has ingresado " + ingreso + "€. Tu nuevo saldo es " + nuevoSaldo + "€.");
+				
+			}
+			
+			
+			
+			
+			
+			
+			
 			System.out.println("Realiza una nueva acción");
+			String opcion = entrada.nextLine();
 			
-			accion = Integer.parseInt(entrada.nextLine());
+			String regex = "^[0-5]{1}$";
+			boolean isOpcionCorrect = opcion.matches(regex);
+			
+			while(!isOpcionCorrect) {
+				
+				System.out.println("La acción elegida no es válida. Introduce una acción válida.");
+				opcion = entrada.nextLine();
+				isOpcionCorrect = opcion.matches(regex);
+			}
 			
 			
+			accion = Integer.parseInt(opcion);	
 		}
 		
 		System.out.println("Fin del programa.\nGracias por utilizar la aplicación.");
