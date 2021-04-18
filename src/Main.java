@@ -1,6 +1,12 @@
 import java.util.Iterator;
 import java.util.Scanner;
 
+/*En las clases he declarado las variables 
+ * de tipo numérico como double. En el método
+ * main, en los datos número, he escrito los decimales con
+ * puntos, y no con comas y no me da error de compilación.
+ */
+
 /*Como se ve, he creado una serie de nétodos privados
  para simplificar el código y hacerlo más legible.*/
 
